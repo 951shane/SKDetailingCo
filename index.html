@@ -221,26 +221,34 @@ const r=document.getElementById('baRange'),a=document.querySelector('.ba-after')
 const monthSelect = document.getElementById('month');
 const daySelect = document.getElementById('day');
 
-function updateDays() {
-  const month = monthSelect.value;
+monthSelect?.addEventListener('change', function () {
+  const month = this.value;
 
   daySelect.innerHTML = '<option value="">Day</option>';
 
   if (!month) return;
 
-  const monthIndex = new Date(Date.parse(month + ' 1, 2024')).getMonth();
-  const year = new Date().getFullYear();
+  const days = {
+    January: 31,
+    February: 29,
+    March: 31,
+    April: 30,
+    May: 31,
+    June: 30,
+    July: 31,
+    August: 31,
+    September: 30,
+    October: 31,
+    November: 30,
+    December: 31
+  };
 
-  const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
-
-  for (let day = 1; day <= daysInMonth; day++) {
+  for (let i = 1; i <= days[month]; i++) {
     const option = document.createElement('option');
-    option.value = day;
-    option.textContent = day;
+    option.value = i;
+    option.textContent = i;
     daySelect.appendChild(option);
   }
-}
-
-monthSelect?.addEventListener('change', updateDays);
+});
 </script></body>
 </html>
