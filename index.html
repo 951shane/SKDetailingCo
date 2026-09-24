@@ -171,15 +171,20 @@ header{position:sticky!important;top:0;z-index:1000;background:rgba(5,5,5,.55)!i
         <p><strong>Email:</strong> <a class="social" href="mailto:skprodetailing@gmail.com">skprodetailing@gmail.com</a></p>
       </div>
       <div class="card">
-        <form id="bookingForm">
+       <form id="bookingForm" action="https://formspree.io/f/xqpaboao" method="POST">
           <div class="form-grid">
-            <input id="name" placeholder="Full name" required />
-            <input id="phone" placeholder="Phone number" type="tel" required />
-            <input id="vehicle" placeholder="Vehicle type (optional)" />
-            <select id="service" required><option value="">Select a service</option><option>Coupe - Full Detail ($120)</option><option>Coupe - Interior ($75)</option><option>Coupe - Exterior ($50)</option><option>Sedan - Full Detail ($200)</option><option>Sedan - Interior ($150)</option><option>Sedan - Exterior ($65)</option><option>SUV - Full Detail ($240)</option><option>SUV - Interior ($200)</option><option>SUV - Exterior ($75)</option><option>3-Row SUV - Full Detail ($280)</option><option>3-Row SUV - Interior ($230)</option><option>3-Row SUV - Exterior ($85)</option><option>Truck - Full Detail ($250)</option><option>Truck - Interior ($185)</option><option>Truck - Exterior ($85)</option><option>Custom Quote</option></select>
-            <input id="date" type="date" required />
-            <input id="time" type="time" required />
-            <textarea id="notes" class="full" placeholder="Tell us about your vehicle or any special requests"></textarea>
+            <input id="name" name="name" placeholder="Full name" required />
+
+<input id="phone" name="phone" placeholder="Phone number" type="tel" required />
+
+<input id="vehicle" name="vehicle" placeholder="Vehicle type (optional)" />
+
+<select id="service" name="service" required>Select a service</option><option>Coupe - Full Detail ($120)</option><option>Coupe - Interior ($75)</option><option>Coupe - Exterior ($50)</option><option>Sedan - Full Detail ($200)</option><option>Sedan - Interior ($150)</option><option>Sedan - Exterior ($65)</option><option>SUV - Full Detail ($240)</option><option>SUV - Interior ($200)</option><option>SUV - Exterior ($75)</option><option>3-Row SUV - Full Detail ($280)</option><option>3-Row SUV - Interior ($230)</option><option>3-Row SUV - Exterior ($85)</option><option>Truck - Full Detail ($250)</option><option>Truck - Interior ($185)</option><option>Truck - Exterior ($85)</option><option>Custom Quote</option></select>
+            <input id="date" name="date" type="date" required />
+
+<input id="time" name="time" type="time" required />
+
+<textarea id="notes" name="notes" class="full" placeholder="Tell us about your vehicle or any special requests"></textarea>
           </div>
           <button class="btn" type="submit">Request Booking</button>
         </form>
@@ -189,18 +194,7 @@ header{position:sticky!important;top:0;z-index:1000;background:rgba(5,5,5,.55)!i
 </main>
 
 <footer><div class="container">© 2026 SK Detailing Co. · Premium care for every ride.</div></footer>
-<script>
-document.getElementById('bookingForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  const subject = encodeURIComponent('SK Detailing Co. Booking Request - ' + document.getElementById('name').value);
-  const body = encodeURIComponent(
-    'Name: '+name.value+'\\nPhone: '+phone.value+'\\nVehicle: '+vehicle.value+
-    '\\nService: '+service.value+'\\nDate: '+date.value+'\\nTime: '+time.value+
-    '\\nNotes: '+notes.value
-  );
-  window.location.href = 'mailto:skprodetailing@gmail.com?subject='+subject+'&body='+body;
-});
-</script>
+
 <a class="floating-book" href="#booking">Book Now</a><script>
 window.addEventListener('load',()=>document.getElementById('siteLoader')?.classList.add('hide'));
 const h=document.querySelector('header');window.addEventListener('scroll',()=>h?.classList.toggle('scrolled',scrollY>20),{passive:true});
