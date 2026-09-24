@@ -180,8 +180,25 @@ header{position:sticky!important;top:0;z-index:1000;background:rgba(5,5,5,.55)!i
 <input id="vehicle" name="vehicle" placeholder="Vehicle type (optional)" />
 
 <select id="service" name="service" required>Select a service</option><option>Coupe - Full Detail ($120)</option><option>Coupe - Interior ($75)</option><option>Coupe - Exterior ($50)</option><option>Sedan - Full Detail ($200)</option><option>Sedan - Interior ($150)</option><option>Sedan - Exterior ($65)</option><option>SUV - Full Detail ($240)</option><option>SUV - Interior ($200)</option><option>SUV - Exterior ($75)</option><option>3-Row SUV - Full Detail ($280)</option><option>3-Row SUV - Interior ($230)</option><option>3-Row SUV - Exterior ($85)</option><option>Truck - Full Detail ($250)</option><option>Truck - Interior ($185)</option><option>Truck - Exterior ($85)</option><option>Custom Quote</option></select>
-            <input id="date" name="date" type="date" required />
+            <select id="month" name="month" required>
+  <option value="">Month</option>
+  <option value="January">January</option>
+  <option value="February">February</option>
+  <option value="March">March</option>
+  <option value="April">April</option>
+  <option value="May">May</option>
+  <option value="June">June</option>
+  <option value="July">July</option>
+  <option value="August">August</option>
+  <option value="September">September</option>
+  <option value="October">October</option>
+  <option value="November">November</option>
+  <option value="December">December</option>
+</select>
 
+<select id="day" name="day" required>
+  <option value="">Day</option>
+</select>
 <input id="time" name="time" type="time" required />
 
 <textarea id="notes" name="notes" class="full" placeholder="Tell us about your vehicle or any special requests"></textarea>
@@ -201,5 +218,29 @@ const h=document.querySelector('header');window.addEventListener('scroll',()=>h?
 const t=document.getElementById('mobileToggle'),m=document.getElementById('mobileMenu');t?.addEventListener('click',()=>m.classList.toggle('open'));m?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>m.classList.remove('open')));
 const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>o.observe(e));
 const r=document.getElementById('baRange'),a=document.querySelector('.ba-after'),d=document.getElementById('baDivider');function slide(v){if(a)a.style.clipPath=`inset(0 ${100-v}% 0 0)`;if(d)d.style.left=v+'%'}r?.addEventListener('input',e=>slide(e.target.value));slide(50);
+const monthSelect = document.getElementById('month');
+const daySelect = document.getElementById('day');
+
+function updateDays() {
+  const month = monthSelect.value;
+
+  daySelect.innerHTML = '<option value="">Day</option>';
+
+  if (!month) return;
+
+  const monthIndex = new Date(Date.parse(month + ' 1, 2024')).getMonth();
+  const year = new Date().getFullYear();
+
+  const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const option = document.createElement('option');
+    option.value = day;
+    option.textContent = day;
+    daySelect.appendChild(option);
+  }
+}
+
+monthSelect?.addEventListener('change', updateDays);
 </script></body>
 </html>
