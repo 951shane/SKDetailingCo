@@ -124,6 +124,143 @@
   transform: translateY(-3px);
   background: rgba(255,255,255,.12);
 }
+  /* ===== SK MOBILE POLISH ===== */
+
+@media (max-width: 700px) {
+
+  /* Overall spacing */
+  .container {
+    width: 92%;
+    max-width: 100%;
+  }
+
+  section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  /* Headings */
+  section h2 {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  /* Buttons */
+  .btn {
+    min-height: 48px;
+    padding: 13px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Service cards */
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .service-card {
+    padding: 24px;
+    border-radius: 18px;
+  }
+
+  .service-top {
+    gap: 8px;
+  }
+
+  .service-top h3 {
+    font-size: 22px;
+  }
+
+  .service-top span {
+    font-size: 18px;
+  }
+
+  /* Feature cards */
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .feature-card {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  /* Booking form */
+  input,
+  select,
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+
+  /* Gallery */
+  .gallery {
+    gap: 14px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+  }
+
+  /* Before / After */
+  .ba-wrap {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  /* Back to top */
+  .back-to-top {
+    right: 16px;
+    bottom: 82px;
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Floating book button */
+  .floating-book {
+    bottom: 18px;
+    right: 16px;
+    padding: 13px 18px;
+    font-size: 14px;
+  }
+}
+
+
+/* Smaller phones */
+@media (max-width: 400px) {
+
+  section h2 {
+    font-size: 28px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .service-card,
+  .feature-card {
+    padding: 20px;
+  }
+
+  .floating-book {
+    right: 12px;
+    bottom: 14px;
+  }
+
+}
   </style>
 <style id="sk-enhancements">
 html{scroll-behavior:smooth}body{overflow-x:hidden}
