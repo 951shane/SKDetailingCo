@@ -459,8 +459,10 @@ header{position:sticky!important;top:0;z-index:1000;background:rgba(5,5,5,.55)!i
 
 <footer><div class="container">© 2026 SK Detailing Co. · Premium care for every ride.</div></footer>
 
-<a class="floating-book" href="#booking">Book Now</a><script>
-  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+<a class="floating-book" href="#booking">Book Now</a>
+<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+<script>
+  
 window.addEventListener('load',()=>document.getElementById('siteLoader')?.classList.add('hide'));
 const h=document.querySelector('header');window.addEventListener('scroll',()=>h?.classList.toggle('scrolled',scrollY>20),{passive:true});
 const t=document.getElementById('mobileToggle'),m=document.getElementById('mobileMenu');t?.addEventListener('click',()=>m.classList.toggle('open'));m?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>m.classList.remove('open')));
