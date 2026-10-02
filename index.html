@@ -261,6 +261,70 @@
   }
 
 }
+    /* FAQ */
+.faq-list{
+  display:grid;
+  gap:12px;
+  max-width:850px;
+  margin:0 auto;
+}
+
+.faq-item{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:0;
+  overflow:hidden;
+  transition:border-color .3s ease;
+}
+
+.faq-item:hover{
+  border-color:var(--accent);
+}
+
+.faq-item summary{
+  cursor:pointer;
+  padding:20px 22px;
+  font-weight:800;
+  list-style:none;
+  position:relative;
+  padding-right:50px;
+}
+
+.faq-item summary::-webkit-details-marker{
+  display:none;
+}
+
+.faq-item summary::after{
+  content:"+";
+  position:absolute;
+  right:22px;
+  top:50%;
+  transform:translateY(-50%);
+  color:var(--accent);
+  font-size:1.5rem;
+  transition:transform .3s ease;
+}
+
+.faq-item[open] summary::after{
+  transform:translateY(-50%) rotate(45deg);
+}
+
+.faq-item p{
+  margin:0;
+  padding:0 22px 20px;
+  color:var(--muted);
+  line-height:1.7;
+}
+    .booking-note{
+  margin:4px 0;
+  padding:12px 14px;
+  background:#171717;
+  border:1px solid var(--line);
+  border-radius:8px;
+  color:#cfcfcf;
+  font-size:.9rem;
+}
   </style>
 <style id="sk-enhancements">
 html{scroll-behavior:smooth}body{overflow-x:hidden}
@@ -313,9 +377,9 @@ header{position:sticky!important;top:0;z-index:1000;background:rgba(5,5,5,.55)!i
       <div class="grid pricing-grid">
         <article class="card"><span class="tag">COUPES</span><h3>Coupes</h3><div class="price-list"><p>Full Detail <b>$120</b></p><p>Interior <b>$75</b></p><p>Exterior <b>$50</b></p></div><a class="btn secondary" href="#booking">Book This</a></article>
         <article class="card featured"><span class="tag">SEDANS</span><h3>Sedans</h3><div class="price-list"><p>Full Detail <b>$200</b></p><p>Interior <b>$150</b></p><p>Exterior <b>$65</b></p></div><a class="btn" href="#booking">Book This</a></article>
-        <article class="card"><span class="tag">SUV</span><h3>SUV</h3><div class="price-list"><p>Full Detail <b>$240</b></p><p>Interior <b>$200</b></p><p>Exterior <b>$75</b></p></div><a class="btn secondary" href="#booking">Book This</a></article>
-        <article class="card"><span class="tag">3-ROW</span><h3>3-Row SUV</h3><div class="price-list"><p>Full Detail <b>$280</b></p><p>Interior <b>$230</b></p><p>Exterior <b>$85</b></p></div><a class="btn secondary" href="#booking">Book This</a></article>
-        <article class="card"><span class="tag">TRUCKS</span><h3>Trucks</h3><div class="price-list"><p>Full Detail <b>$250</b></p><p>Interior <b>$185</b></p><p>Exterior <b>$85</b></p></div><a class="btn secondary" href="#booking">Book This</a></article>
+        <article class="card"><span class="tag">SUV</span><h3>SUV</h3><div class="price-list"><p>Full Detail <b>$230</b></p><p>Interior <b>$175</b></p><p>Exterior <b>$75</b></p></div><a class="btn secondary" href="#booking">Book This</a></article>
+        <article class="card"><span class="tag">3-ROW</span><h3>3-Row SUV</h3><div class="price-list"><p>Full Detail <b>$270</b></p><p>Interior <b>$200</b></p><p>Exterior <b>$85</b></p></div><a class="btn secondary" href="#booking">Book This</a></article>
+        <article class="card"><span class="tag">TRUCKS</span><h3>Trucks</h3><div class="price-list"><p>Full Detail <b>$245</b></p><p>Interior <b>$175</b></p><p>Exterior <b>$85</b></p></div><a class="btn secondary" href="#booking">Book This</a></article>
       </div>>
     </div>
   </section>
@@ -332,19 +396,113 @@ header{position:sticky!important;top:0;z-index:1000;background:rgba(5,5,5,.55)!i
       </div>
 
       <div class="pricing-grid custom-grid">
-<article class="card">
-          <span class="tag">CUSTOM</span>
-          <h3>Custom Package</h3>
-          <div class="price-list">
-            <p>Build your own service <b>Custom</b></p>
-            <p>Multiple add-ons <b>Custom</b></p>
-          </div>
+
+  <article class="card">
+    <span class="tag">CUSTOM</span>
+    <h3>Custom Package</h3>
+    <div class="price-list">
+      <p>Build your own service <b>Custom</b></p>
+      <p>Multiple add-ons <b>Custom</b></p>
+    </div>
+    <a class="btn" href="#booking">Get a Custom Quote</a>
+  </article>
+
+  <article class="card">
+    <span class="tag">ADD-ON</span>
+    <h3>Pet Hair Removal</h3>
+    <div class="price">From $30</div>
+    <p class="muted">Thorough removal of pet hair from carpets, seats, and hard-to-reach areas.</p>
+    <a class="btn secondary" href="#booking">Add to Booking</a>
+  </article>
+
+  <article class="card">
+    <span class="tag">ADD-ON</span>
+    <h3>Clay Treatment</h3>
+    <div class="price">From $40</div>
+    <p class="muted">Removes bonded contaminants for a smoother, cleaner paint surface.</p>
+    <a class="btn secondary" href="#booking">Add to Booking</a>
+  </article>
+
+  <article class="card">
+    <span class="tag">ADD-ON</span>
+    <h3>Exterior Plastics Restoration</h3>
+    <div class="price">From $40</div>
+    <p class="muted">Restores faded exterior plastic trim for a cleaner, refreshed appearance.</p>
+    <a class="btn secondary" href="#booking">Add to Booking</a>
+  </article>
+
+  <article class="card">
+    <span class="tag">ADD-ON</span>
+    <h3>Seat Shampoo & Extraction</h3>
+    <div class="price">From $50</div>
+    <p class="muted">Deep cleaning and extraction for fabric seats and upholstery.</p>
+    <a class="btn secondary" href="#booking">Add to Booking</a>
+  </article>
+
+  <article class="card">
+    <span class="tag">ADD-ON</span>
+    <h3>Headlight Restoration</h3>
+    <div class="price">From $75</div>
+    <p class="muted">Restores clarity to hazy or oxidized headlights.</p>
+    <a class="btn secondary" href="#booking">Add to Booking</a>
+  </article>
+
+</div>
           <a class="btn" href="#booking">Get a Custom Quote</a>
         </article>
       </div>
     </div>
   </section>
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Frequently Asked Questions</div>
+        <h2>Got Questions?</h2>
+      </div>
+      <p class="muted">Everything you need to know before booking.</p>
+    </div>
 
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>Do I need to provide water and electricity?</summary>
+        <p>
+          Yes. Since SK Detailing Co. is a mobile service, customers provide
+          access to a standard outdoor water spigot and electrical outlet at
+          the service location.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How long does a detail take?</summary>
+        <p>
+          Service time depends on the vehicle, package, and overall condition.
+          Larger or heavily soiled vehicles may require additional time.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do you come to my home?</summary>
+        <p>
+          Yes. SK Detailing Co. is a mobile detailing service, so we come
+          directly to your location.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I add specialty services to my package?</summary>
+        <p>
+          Absolutely. Add-ons such as pet hair removal, clay treatment,
+          exterior plastics restoration, seat shampoo & extraction, and
+          headlight restoration are available.
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>
   <section id="beforeAfter"><div class="container reveal"><div class="section-head"><div><div class="eyebrow">See the difference</div><h2>Before / After</h2></div><p class="muted">Drag to compare.</p></div><div class="before-after"><div class="ba-before" style="background-image:url('bmw_hero.jpg')"></div><div class="ba-after" style="background-image:url('bmw_hero.jpg');filter:brightness(1.25) saturate(1.15)"></div><div class="ba-divider" id="baDivider"></div><input class="ba-range" id="baRange" type="range" min="0" max="100" value="50" aria-label="Before and after slider"></div></div></section><section id="gallery">
     <div class="container">
       <div class="section-head"><div><div class="eyebrow">The results</div><h2>Before. After. Wow.</h2></div></div>
@@ -439,6 +597,9 @@ header{position:sticky!important;top:0;z-index:1000;background:rgba(5,5,5,.55)!i
 
 <textarea id="notes" name="notes" class="full" placeholder="Tell us about your vehicle or any special requests"></textarea>
           </div>
+         <p class="booking-note">
+  💧 Please have access to water and electricity available at the service location.
+</p>
           <button class="btn" type="submit">Request Booking</button>
         </form>
       </div>
