@@ -325,6 +325,47 @@
   color:#cfcfcf;
   font-size:.9rem;
 }
+    .addon-box{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:20px;
+}
+
+.addon-box h3{
+  margin:0 0 4px;
+}
+
+.addon-box > p{
+  margin:0 0 15px;
+  font-size:.9rem;
+}
+
+.addon-option{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 0;
+  border-top:1px solid var(--line);
+  cursor:pointer;
+}
+
+.addon-option input{
+  width:18px;
+  height:18px;
+  accent-color:var(--accent);
+  cursor:pointer;
+}
+
+.addon-option span{
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+}
+
+.addon-option b{
+  color:#fff;
+}
   </style>
 <style id="sk-enhancements">
 html{scroll-behavior:smooth}body{overflow-x:hidden}
@@ -543,6 +584,7 @@ header{position:sticky!important;top:0;z-index:1000;background:rgba(5,5,5,.55)!i
 <input id="vehicle" name="vehicle" placeholder="Vehicle type (optional)" />
 
 <select id="service" name="service" required>Select a service</option><option>Coupe - Full Detail ($120)</option><option>Coupe - Interior ($75)</option><option>Coupe - Exterior ($50)</option><option>Sedan - Full Detail ($200)</option><option>Sedan - Interior ($150)</option><option>Sedan - Exterior ($65)</option><option>SUV - Full Detail ($240)</option><option>SUV - Interior ($200)</option><option>SUV - Exterior ($75)</option><option>3-Row SUV - Full Detail ($280)</option><option>3-Row SUV - Interior ($230)</option><option>3-Row SUV - Exterior ($85)</option><option>Truck - Full Detail ($250)</option><option>Truck - Interior ($185)</option><option>Truck - Exterior ($85)</option><option>Custom Quote</option></select>
+         
             <select id="month" name="month" required>
   <option value="">Month</option>
   <option value="January">January</option>
